@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment and Top-up - Choose Payment Mode</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('abc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .navbar {
+            background-color: rgba(223, 166, 241, 0.334); 
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: grey !important; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid teal;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: teal; 
+        }
+        .btn-pay {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-ewallet {
+            background-color: #4CAF50; }
+        .btn-ewallet:hover {
+            background-color: #45a049;
+        }
+        .btn-apple {
+            background-color: black;
+        }
+        .btn-apple:hover {
+            background-color: #333;
+            text-decoration: none; 
+            color: white; 
+        }
+        .btn-google {
+            background-color: black;
+        }
+        .btn-google:hover {
+            background-color: #333;
+            text-decoration: none; 
+            color: white; 
+        }
+        .btn-card {
+            background-color: #d48a58; 
+        }
+        .btn-card:hover {
+            background-color: #b94409; 
+            text-decoration: none; 
+            color: white; }
+        .separator-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .separator-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ccc;
+        }
+        .separator-text {
+            margin: 0 10px;
+            color: #ccc;
+            font-weight: bold;
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: #343a40; 
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer h5 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="payment_topup.html">Payment and Top-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Choose Payment Mode</h2>
+            <a href="https://www.apple.com/sg/apple-pay/" class="btn-pay btn-apple">Apple Pay</a>
+            <a href="https://payments.google.com/gp/w/home/paymentmethods?sctid=5875381860231765" class="btn-pay btn-google">Google Pay</a>
+            <div class="separator-container">
+                <div class="separator-line"></div>
+                <span class="separator-text">OR</span>
+                <div class="separator-line"></div>
+            </div>
+            <button class="btn-pay btn-card" onclick="selectPaymentMode('card')">Physical Card</button>
+            <form id="payment-form" action="payment_topup_2.html" method="get" style="display:none;">
+                <input type="hidden" id="payment-mode" name="payment-mode" value="">
+            </form>
+        </div>
+    </main>
+    <footer class="footer bg-dark text-white">
+        <div>
+            <h5>NovaRemit</h5>
+            <p>Bridging distances, empowering lives.</p>
+            <p>&copy; 2024 NovaRemit</p>
+        </div>
+        <div>
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="homepage.html" class="text-white">Home</a></li>
+                <li><a href="about_us.html" class="text-white">About Us</a></li>
+                <li><a href="services.html" class="text-white">Services</a></li>
+                <li><a href="payment_topup.html" class="text-white">Payment and Top-up</a></li>
+                <li><a href="contact.html" class="text-white">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5>Contact Us</h5>
+            <p>Email: support@novaremit.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </footer>
+    <script>
+        function selectPaymentMode(mode) {
+            if (mode === 'card') {
+                document.getElementById('payment-mode').value = mode;
+                document.getElementById('payment-form').submit();
+            } else {
+                alert('You selected ' + mode + ' payment mode.');
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

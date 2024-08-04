@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('abc.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .navbar {
+            background-color: rgba(223, 166, 241, 0.7); 
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: grey !important; 
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .left-side {
+            position: relative;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+        .left-side::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('xxx.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            border-radius: 10px; 
+        }
+        .left-side > div {
+            position: relative;
+            z-index: 2;
+        }
+        .left-side h2 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+        .right-side {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px;
+            color: #333;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+        .right-side h4 {
+            color: #ad6ee8;
+            margin-bottom: 10px;
+            font-size: 2em;
+            text-align: center;
+        }
+        .right-side p {
+            color: #ad6ee8;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-form .section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .login-form .section label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .login-form .section a.singpass-btn, .login-form .section a.email-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            background-color: white;
+            border: 2px solid #d1d1d1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .login-form .section a.singpass-btn:hover, .login-form .section a.email-btn:hover {
+            background-color: #ad6ee8;
+            color: white;
+        }
+        .login-form .section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .login-form .section button, .login-form .section a.login-btn {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .login-form .section .forget-password {
+            background-color: transparent;
+            color: #ad6ee8;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .login-form .section .forget-password:hover {
+            text-decoration: underline;
+        }
+        .login-form .section .login-btn {
+            background-color: #ad6ee8;
+            color: white;
+        }
+        .login-form .section .login-btn:hover {
+            background-color: #7c4d99;
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: #343a40; 
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        .footer h5 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ddd;
+        }
+    </style>
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const emailOrPhone = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const user = JSON.parse(localStorage.getItem('user'));
+            
+            if (user && (user.email === emailOrPhone || user.phone === emailOrPhone) && user.password === password) {
+                alert("Login successful");
+                window.location.href = "payment_topup.html";
+            } else {
+                alert("Invalid email/phone number or password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment_topup.html">Payment and Top-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <div class="left-side">
+                <div>
+                    <h2>New users can get 10% cashback!</h2>
+                </div>
+            </div>
+            <div class="right-side">
+                <h4>Login</h4>
+                <p>Sign in to continue</p>
+                <div class="login-form">
+                    <div class="section">
+                        <label for="email">Email/Phone number</label>
+                        <input type="text" id="email" name="email" placeholder="Email Address" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button type="button" class="forget-password">Forgot your Password?</button>
+                        <button type="submit" class="login-btn" onclick="login(event)">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>NovaRemit</h5>
+                    <p>Bridging distances, empowering lives.</p>
+                    <p>&copy; 2024 NovaRemit</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="homepage.html" class="text-white">Home</a></li>
+                        <li><a href="about_us.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="payment_topup.html" class="text-white">Payment and Top-up</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@novaremit.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

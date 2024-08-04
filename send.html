@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment and Top-up/Send money/NovaRemit.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('abc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333; 
+        }
+        .navbar {
+            background-color: rgba(223, 166, 241, 0.334); 
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: grey !important; 
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333; 
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #008080; 
+            border: none;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #006666; 
+        }
+        .country-selection {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .country-selection select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #8B4513; 
+            font-size: 16px;
+            color: #333; 
+        }
+        .frequently-selected {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .country {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px; 
+            padding: 10px;
+            margin: 10px;
+            border: 1.1px solid #8B4513; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #f9f9f9;
+            color: #333; 
+        }
+        .country:hover {
+            background-color: #f0f0f0;
+        }
+        .country p {
+            margin: 0;
+            font-size: 0.8em; 
+            font-weight: normal; 
+        }
+        .recipient-bank-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .recipient-bank-info input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #8B4513; 
+            font-size: 16px;
+            color: #333; 
+        }
+        .transfer-amount {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .transfer-amount input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #8B4513; 
+            font-size: 16px;
+            color: #333; 
+            text-align: center; 
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: #343a40; 
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer h5 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="payment_topup.html">Payment and Top-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form id="send-money-form" onsubmit="handleFormSubmit(event)">
+                <div class="buttons">
+                    <button type="button" onclick="navigateToConvert()">Convert</button>
+                    <button type="submit">Send</button>
+                </div>
+                <div class="country-selection">
+                    <h4>Select recipient's country</h4>
+                    <select id="country-dropdown">
+                    </select>
+                    <h4>Frequently selected countries</h4>
+                    <div class="frequently-selected">
+                        <div class="country" onclick="selectCountry('India')">
+                            <p>India</p>
+                        </div>
+                        <div class="country" onclick="selectCountry('Philippines')">
+                            <p>Philippines</p>
+                        </div>
+                        <div class="country" onclick="selectCountry('Indonesia')">
+                            <p>Indonesia</p>
+                        </div>
+                        <div class="country" onclick="selectCountry('Bangladesh')">
+                            <p>Bangladesh</p>
+                        </div>
+                        <div class="country" onclick="selectCountry('Myanmar')">
+                            <p>Myanmar</p>
+                        </div>
+                    </div>
+                    <div class="recipient-bank-info">
+                        <h3>Recipient Bank Account Information</h3>
+                        <input type="text" id="recipient-name" placeholder="Recipient Name" required oninput="validateRecipientName()">
+                        <input type="text" placeholder="Bank Name" required>
+                        <input type="text" placeholder="Bank Account Number" required>
+                    </div>
+                </div>
+                <div class="transfer-amount">
+                    <h3>Enter Transfer Amount (SGD)</h3>
+                    <p>Transferable balance: S$1,919.20 <i class="info-icon"></i></p>
+                    <input type="text" id="transfer-amount" placeholder="S$100.00" required>
+                    <p>(5% Transaction fee)</p>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer bg-dark text-white">
+        <div>
+            <h5>NovaRemit</h5>
+            <p>Bridging distances, empowering lives.</p>
+            <p>&copy; 2024 NovaRemit</p>
+        </div>
+        <div>
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="homepage.html" class="text-white">Home</a></li>
+                <li><a href="about_us.html" class="text-white">About Us</a></li>
+                <li><a href="services.html" class="text-white">Services</a></li>
+                <li><a href="payment_topup.html" class="text-white">Payment and Top-up</a></li>
+                <li><a href="contact.html" class="text-white">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5>Contact Us</h5>
+            <p>Email: support@novaremit.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </footer>
+    <script>
+        const asianCountries = [
+            "Afghanistan", "Armenia", "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", 
+            "Cyprus", "Georgia", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", 
+            "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", "Nepal", 
+            "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar", "Saudi Arabia", "Singapore", 
+            "South Korea", "Sri Lanka", "Syria", "Tajikistan", "Thailand", "Timor-Leste", "Turkey", "Turkmenistan", 
+            "United Arab Emirates", "Uzbekistan", "Vietnam", "Yemen"
+        ];
+
+        const dropdown = document.getElementById('country-dropdown');
+        
+        asianCountries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            dropdown.appendChild(option);
+        });
+
+        function navigateToConvert() {
+            window.location.href = 'convert.html';
+        }
+
+        function selectCountry(country) {
+            const dropdown = document.getElementById('country-dropdown');
+            dropdown.value = country;
+        }
+
+        function validateRecipientName() {
+            const input = document.getElementById('recipient-name');
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault(); 
+            window.location.href = 'pt.html'; 
+        }
+    </script>
+</body>
+</html>

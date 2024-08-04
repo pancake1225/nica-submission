@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaRemit.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('k.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: rgba(222, 172, 237, 0.587); 
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: grey !important; 
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 150px 20px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 24px;
+            color: #e9c1ce; 
+            margin-bottom: 40px;
+        }
+        .register-button {
+            position: relative;
+            z-index: 2;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: burlywood; 
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .register-button:hover {
+            background-color: rgb(223, 164, 88); 
+            color: #000;
+            transform: scale(1.05);
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: #343a40; 
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        .footer h5 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Nova Remit">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment_topup.html">Payment and Top-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h1>Bridging distances, Empowering lives</h1>
+            <p>Unlock a world of financial possibilities</p>
+            <a class="register-button" href="register.html">Register Now!</a>
+        </div>
+    </main>
+
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>NovaRemit</h5>
+                    <p>Bridging distances, empowering lives.</p>
+                    <p>&copy; 2024 NovaRemit</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="homepage.html" class="text-white">Home</a></li>
+                        <li><a href="about_us.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="payment_topup.html" class="text-white">Payment and Top-up</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@novaremit.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

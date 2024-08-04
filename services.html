@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Services - NovaRemit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('abc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .navbar {
+            background-color: rgba(223, 166, 241, 0.334); /* Purple translucent background */
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: grey !important; /* Hover effect color */
+        }
+        .content {
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.9); /* White translucent background */
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 900px;
+            color: #333; /* Dark text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333; /* Dark text */
+        }
+        .content h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #555; /* Darker text */
+        }
+        .service-section {
+            margin-bottom: 40px;
+        }
+        .service-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: teal;
+        }
+        .service-section p {
+            font-size: 1.1em;
+            color: #555; /* Darker text */
+        }
+        .why-choose {
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9); /* White translucent background */
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        .why-choose h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333; /* Dark text */
+        }
+        .why-choose p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #555; /* Darker text */
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .service {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #333; /* Dark text */
+            flex: 1 1 300px;
+            margin: 10px;
+            max-width: 300px;
+        }
+        .service img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .service h2 {
+            font-size: 1.5em;
+            margin: 20px 0 10px;
+            color: teal;
+        }
+        .service p {
+            font-size: 1em;
+            color: #555; /* Darker text for readability */
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: rgba(52, 58, 64, 0.9); /* Slightly translucent dark background */
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .footer h5 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Nova Remit"> <!-- Replace with the path to your logo -->
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="services.html" style="color: #c78be5;">Services</a> <!-- Active link style -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment_topup.html">Payment and Top-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content why-choose">
+            <h2>Why choose NovaRemit?</h2>
+            <p>We have fast and secure money transfers</p>
+            <p>Competitive exchange rates</p>
+            <p>Multiple ways for recipients to receive money</p>
+            <p>Strong security against fraud and following rules against money laundering.<br>
+                 We use SingPass and MFA to make sure it’s secure.</p>
+        </div>
+        
+        <div class="content">
+            <h1>Our Financial Services</h1>
+            <h2>Comprehensive Solutions for Your Financial Needs</h2>
+
+            <div class="service-section">
+                <h3>Remittance Services</h3>
+                <p>Domestic and international money transfers.</p>
+                <p>Competitive exchange rates.</p>
+                <p>Quick and secure transactions.</p>
+            </div>
+
+            <div class="service-section">
+                <h3>Payment Methods</h3>
+                <p>Support for bank transfers, credit/debit cards, and mobile wallets like Apple Pay and Google Pay.</p>
+                <p>Convenient and secure transaction options.</p>
+            </div>
+
+            <div class="service-section">
+                <h3>Currency Exchange</h3>
+                <p>Conversion of money to different currencies at competitive rates.</p>
+                <p>Facilitates both sending money abroad and receiving funds from overseas.</p>
+            </div>
+
+            <div class="service-section">
+                <h3>E-wallet Services</h3>
+                <p>Integration with e-wallets like Apple Pay and Google Pay for easy transactions.</p>
+                <p>Secure and convenient payment options.</p>
+            </div>
+
+            <div class="service-section">
+                <h3>Customer Support</h3>
+                <p>24/7 dedicated customer support.</p>
+                <p>Assistance with inquiries and issues to ensure customer satisfaction.</p>
+            </div>
+            <div class="services">
+                <div class="service">
+                    <img src="qss.jpg" alt="Quick and Secure Sign-up">
+                    <h2>Quick and Secure Sign-up Process</h2>
+                    <p>Experience peace of mind with our secure transaction services. We ensure quick and secure sign-up processes using advanced verification methods like SingPass for your protection.</p>
+                </div>
+                <div class="service">
+                    <img src="gt.jpg" alt="Global Transfers">
+                    <h2>Global Transfers</h2>
+                    <p>Convert money to the recipient's local currency at competitive exchange rates. Send funds internationally with real-time tracking and support for multiple currencies.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+            <h5>NovaRemit</h5>
+            <p>Bridging distances, empowering lives.</p>
+            <p>&copy; 2024 NovaRemit</p>
+        </div>
+        <div>
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="homepage.html" class="text-white">Home</a></li>
+                <li><a href="about_us.html" class="text-white">About Us</a></li>
+                <li><a href="services.html" class="text-white">Services</a></li>
+                <li><a href="payment_topup.html" class="text-white">Payment and Top-up</a></li>
+                <li><a href="contact.html" class="text-white">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5>Contact Us</h5>
+            <p>Email: support@novaremit.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
